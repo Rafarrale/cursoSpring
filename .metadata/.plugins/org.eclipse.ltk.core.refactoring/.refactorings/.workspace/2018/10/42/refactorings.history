@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;demo-jsp&apos; to &apos;spring-boot-web-jsp&apos;" description="Rename resource &apos;demo-jsp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/demo-jsp" name="spring-boot-web-jsp" stamp="1539713153747" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;spring-boot-datajpa.app&apos; to &apos;spring-boot-data-jpa&apos;" description="Rename resource &apos;spring-boot-datajpa.app&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/spring-boot-datajpa.app" name="spring-boot-data-jpa" stamp="1539718306972" updateReferences="true"/>
+</session>

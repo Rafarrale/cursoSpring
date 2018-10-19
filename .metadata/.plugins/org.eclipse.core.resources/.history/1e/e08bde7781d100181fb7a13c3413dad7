@@ -1,0 +1,5 @@
+package com.example.springboot.app.controllers;
+
+public class ClienteController {
+
+}

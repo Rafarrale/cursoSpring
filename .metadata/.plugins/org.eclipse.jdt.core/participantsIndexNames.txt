@@ -1,0 +1,5 @@
+INDEX VERSION 1.131
+/home/rafarrale/eclipse-workspace/cursoSpring/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/2531577653.index
+/spring-boot-web-jsp/src/main/java
+/home/rafarrale/eclipse-workspace/cursoSpring/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/87069069.index
+/demo-jsp/src/main/java

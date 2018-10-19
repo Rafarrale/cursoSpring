@@ -1,0 +1,5 @@
+package com.example.springboot.app.models.service;
+
+public class IClienteServiceImpl implements IClienteService{
+
+}

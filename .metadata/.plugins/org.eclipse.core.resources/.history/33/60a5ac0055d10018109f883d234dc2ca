@@ -1,0 +1,12 @@
+package com.example.demo.app.controllers;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+
+@Controller
+public class IndexController {
+	public String index(Model model) {
+		model.addAttribute("titulo", "Hola Spring Boot!");
+		return "index";
+	}
+}
