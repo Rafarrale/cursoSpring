@@ -5,83 +5,97 @@ import java.util.Map;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.example.springboot.app.models.entity.Cliente;
 import com.example.springboot.app.models.service.IClienteService;
+import com.example.springboot.util.paginator.PageRender;
 
 @Controller
-@SessionAttributes("cliente")  //GUarda el objeto del formulario dentro del session atributes 
+@SessionAttributes("cliente") // GUarda el objeto del formulario dentro del session atributes
 public class ClienteController {
-	
+
 	@Autowired
 	private IClienteService clienteService;
-	
-	@RequestMapping(value="/listar", method=RequestMethod.GET)
-	public String listar(Model model) {
+
+	@RequestMapping(value = "/listar", method = RequestMethod.GET)
+	public String listar(@RequestParam(name = "page", defaultValue = "0") int page, Model model) {
+		Pageable pageRequest = PageRequest.of(page, 4);
+		Page<Cliente> clientes = clienteService.findall(pageRequest);
+		
+		PageRender<Cliente> pageRender = new PageRender<>("/listar", clientes);
+		
 		model.addAttribute("titulo", "Listado de clientes");
-		model.addAttribute("clientes", clienteService.findall());
+		model.addAttribute("clientes", clientes);
+		model.addAttribute("page", pageRender);
 		return "listar";
 	}
-	
-	@RequestMapping(value="/form")
+
+	@RequestMapping(value = "/form")
 	public String crear(Map<String, Object> model) {
 		Cliente cliente = new Cliente();
 		model.put("cliente", cliente);
 		model.put("titulo", "Formulario de Cliente");
 		return "form";
 	}
-	@RequestMapping(value="form/{id}")
-	public String editar(@PathVariable(value="id") Long id, Map<String, Object> model) {
+
+	@RequestMapping(value = "form/{id}")
+	public String editar(@PathVariable(value = "id") Long id, Map<String, Object> model, RedirectAttributes flash) {
 		Cliente cliente = null;
-		
-		if(id > 0) {
+
+		if (id > 0) {
 			cliente = clienteService.findOne(id);
-		}else {
+			if (cliente == null) {
+				flash.addFlashAttribute("error", "El ID del cliente no existe en la BBDD");
+				return "redirect:/listar";
+			}
+		} else {
+			flash.addFlashAttribute("error", "El ID del cliente no puede ser cero!");
 			return "redirect:/listar";
 		}
-		
+
 		model.put("cliente", cliente);
 		model.put("titulo", "Editar cliente");
-		
+
 		return "form";
 	}
-	
-	@RequestMapping(value="/form", method=RequestMethod.POST)
-	public String guardar(@Valid Cliente cliente, BindingResult result, Model model, SessionStatus status) { //@Valid habilita la validacion en el objeto mapeado al Form
-		
+
+	@RequestMapping(value = "/form", method = RequestMethod.POST)
+	public String guardar(@Valid Cliente cliente, BindingResult result, Model model, RedirectAttributes flash,
+			SessionStatus status) { // @Valid habilita la validacion en el objeto mapeado al Form
+
 		model.addAttribute("titulo", "Formulario de Cliente");
-		
-		if(result.hasErrors()) {
+
+		if (result.hasErrors()) {
 			return "form";
 		}
-			
+		String mensajeFlash = (cliente.getId() != null) ? "Cliente editado con exito!" : "Cliente creado con exito!";
+
 		clienteService.save(cliente);
-		 status.setComplete(); // Elimina el objeto cliente de la sesion
-		 return "redirect:listar";
+		status.setComplete(); // Elimina el objeto cliente de la sesion
+		flash.addFlashAttribute("success", mensajeFlash);
+		return "redirect:listar";
 	}
-	
-	@RequestMapping(value="/eliminar/{id}")
-	public String eliminar(@PathVariable(value="id") Long id) {
-		
-		if(id > 0) {
+
+	@RequestMapping(value = "/eliminar/{id}")
+	public String eliminar(@PathVariable(value = "id") Long id, RedirectAttributes flash) {
+
+		if (id > 0) {
 			clienteService.eliminar(id);
+			flash.addFlashAttribute("success", "Cliente eliminado con exito!");
 		}
 		return "redirect:/listar";
 	}
 }
-
-
-
-
-
-
-
-
