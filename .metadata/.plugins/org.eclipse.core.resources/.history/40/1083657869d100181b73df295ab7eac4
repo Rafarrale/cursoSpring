@@ -1,6 +1,0 @@
-package com.example.demo.app.controllers;
-
-@Controller
-public class IndexController {
-
-}
