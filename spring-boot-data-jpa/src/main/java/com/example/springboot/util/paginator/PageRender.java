@@ -12,6 +12,7 @@ public class PageRender<T> {
 	private int numElementosPagina;
 	private int paginaActual;
 	private List<PageItem> paginas;
+	
 	public PageRender(String url, Page<T> page) {
 		this.url = url;
 		this.page = page;
@@ -22,7 +23,7 @@ public class PageRender<T> {
 		
 		int desde, hasta;
 		if(totalPaginas <= numElementosPagina) {
-			desde = 1;
+			desde = 1; 
 			hasta = totalPaginas;
 		}else if(paginaActual <= numElementosPagina / 2){
 			desde = 1;

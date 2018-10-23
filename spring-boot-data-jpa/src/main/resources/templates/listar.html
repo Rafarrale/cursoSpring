@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www. thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 <head th:replace="layout/layout :: head">
 </head>
 <body>
@@ -28,7 +28,7 @@
 				</thead>
 				<tbody>
 					<tr th:each="cliente: ${clientes}">
-						<td th:text="${cliente.id}"></td>
+						<td><a class="btn btn-primary btn-xs" th:href="@{/ver/} + ${cliente.id}" th:text="${cliente.id}"></a></td>
 						<td th:text="${cliente.nombre}"></td>
 						<td th:text="${cliente.apellidos}"></td>
 						<td th:text="${cliente.email}"></td>
