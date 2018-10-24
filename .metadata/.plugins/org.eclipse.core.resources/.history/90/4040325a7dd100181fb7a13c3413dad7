@@ -1,5 +1,0 @@
-package com.example.springboot.app.models.dao;
-
-public interface IClienteDao {
-
-}
