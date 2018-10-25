@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <typeInfoHistroy>
     <typeInfo handle="=spring-boot-data-jpa/src\/main\/java&lt;com.example.springboot.app.models.dao{IClienteDao.java[IClienteDao" modifiers="513" timestamp="1540313321000"/>
-    <typeInfo handle="=spring-boot-data-jpa/src\/main\/java&lt;com.example.springboot.app.models.service{IUploadFileService.java[IUploadFileService" modifiers="513" timestamp="1540328639789"/>
+    <typeInfo handle="=spring-boot-data-jpa/src\/main\/java&lt;com.example.springboot.app.models.service{IUploadFileService.java[IUploadFileService" modifiers="513" timestamp="1540367706266"/>
 </typeInfoHistroy>
