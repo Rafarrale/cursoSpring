@@ -22,4 +22,18 @@
 		<item value="618" key="DIALOG_X_ORIGIN"/>
 		<item value="313" key="DIALOG_Y_ORIGIN"/>
 	</section>
+	<section name="org.eclipse.ui.dialogs.FilteredResourcesSelectionDialog">
+		<item value="false" key="FilterByLocation"/>
+		<item value="true" key="ShowStatusLine"/>
+		<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0A;&lt;History&gt;&#x0A;&lt;historyRootNode&gt;&#x0A;&lt;infoNode path=&quot;/spring-boot-data-jpa/src/main/java/com/example/springboot/app/models/entity/Factura.java&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/spring-boot-data-jpa/src/main/java/com/example/springboot/app/models/entity/Cliente.java&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/spring-boot-data-jpa/src/main/resources/templates/listar.html&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/spring-boot-data-jpa/src/main/java/com/example/springboot/app/models/service/IClienteService.java&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/spring-boot-data-jpa/src/main/java/com/example/springboot/app/models/service/ClienteServiceImpl.java&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/spring-boot-data-jpa/src/main/java/com/example/springboot/app/controllers/FacturaController.java&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/spring-boot-data-jpa/src/main/java/com/example/springboot/app/controllers/ClienteController.java&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;/historyRootNode&gt;&#x0A;&lt;/History&gt;" key="History"/>
+		<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0A;&lt;workingSet workingSetName=&quot;&quot;/&gt;" key="WorkingSet"/>
+		<item value="false" key="ShowDerived"/>
+		<section name="DialogBoundsSettings">
+			<item value="600" key="DIALOG_WIDTH"/>
+			<item value="1|Sans|10.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+			<item value="500" key="DIALOG_HEIGHT"/>
+			<item value="660" key="DIALOG_X_ORIGIN"/>
+			<item value="174" key="DIALOG_Y_ORIGIN"/>
+		</section>
+	</section>
 </section>
