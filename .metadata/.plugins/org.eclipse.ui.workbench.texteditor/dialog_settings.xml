@@ -6,12 +6,18 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="Val" key="selection"/>
+		<item value="thymeleaf" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="thymeleaf"/>
+			<item value="redirect"/>
+			<item value="errorr"/>
+			<item value="addAttribute"/>
+			<item value="el cliente"/>
+			<item value="listar"/>
 			<item value="º"/>
 			<item value="val"/>
 			<item value="status"/>
@@ -21,8 +27,6 @@
 			<item value="editar"/>
 			<item value="@RequestParam"/>
 			<item value="findAll(pageable)"/>
-			<item value="No Dialect mapping for JDBC type: 2000"/>
-			<item value="meta"/>
 		</list>
 		<list key="replacehistory">
 		</list>
