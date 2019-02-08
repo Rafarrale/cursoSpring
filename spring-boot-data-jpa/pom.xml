@@ -80,7 +80,6 @@
 			<version>5.3.7.Final</version><!--$NO-MVN-MAN-VER$ -->
 		</dependency>
 
-
 	</dependencies>
 
 	<build>
